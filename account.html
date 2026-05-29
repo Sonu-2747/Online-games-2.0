@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account - PIXEL ARCADE</title>
+    <link rel="stylesheet" href="account.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h2>PIXEL ARCADE</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="mainpage.html">Home</a></li>
+            <li><a href="library.html">Library</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+            <li><button class="logout-btn" id="logoutBtn">Logout</button></li>
+        </ul>
+    </nav>
+
+    <!-- Account Page -->
+    <div class="account-page">
+        <header class="account-header">
+            <h1>User Account</h1>
+        </header>
+
+        <div id="statusMsg" style="display:none; text-align:center; margin: 10px auto; padding: 10px 20px; border-radius: 6px; max-width:500px; font-weight:bold;"></div>
+
+        <div class="account-container">
+            <!-- Profile Picture Section -->
+            <div class="profile-section">
+                <img src="profile1.jpg" alt="Profile Picture" class="profile-pic" id="profile-pic">
+                <input type="file" id="upload-profile-pic" class="upload-btn">
+                <label for="upload-profile-pic" class="edit-btn">Change Profile Picture</label>
+            </div>
+
+            <!-- User Info Section -->
+            <form class="account-info" id="profileForm">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" placeholder="Loading...">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Loading..." readonly style="opacity:0.7; cursor:not-allowed;">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" placeholder="e.g. +91 98765 43210">
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" placeholder="Your address..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" placeholder="Tell us about yourself..."></textarea>
+                </div>
+
+                <button type="submit" class="save-btn">Save Changes</button>
+            </form>
+
+            <!-- Connected Accounts -->
+            <div class="login-options">
+                <h3>Connected Accounts</h3>
+                <div class="social-logos">
+                    <a href="#" class="social-logo" title="Login with Google">
+                        <img src="google.png" alt="Google Logo">
+                    </a>
+                    <a href="#" class="social-logo" title="Login with Facebook">
+                        <img src="facebook.svg" alt="Facebook Logo">
+                    </a>
+                    <a href="#" class="social-logo" title="Login with Twitter">
+                        <img src="twitter.svg" alt="Twitter Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 PIXEL ARCADE. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      const API_BASE = 'http://localhost:5000/api';
+      const token = localStorage.getItem('token');
+
+      // Redirect to login if not authenticated
+      if (!token) {
+        alert('Please log in first.');
+        window.location.href = 'loginpage.html';
+      }
+
+      function showStatus(message, success) {
+        const el = document.getElementById('statusMsg');
+        el.textContent = message;
+        el.style.display = 'block';
+        el.style.background = success ? '#1e5e2a' : '#5e1e1e';
+        el.style.color = '#fff';
+        setTimeout(function() { el.style.display = 'none'; }, 3500);
+      }
+
+      // Load profile on page load
+      async function loadProfile() {
+        try {
+          const response = await fetch(API_BASE + '/user/profile', {
+            headers: { 'Authorization': 'Bearer ' + token }
+          });
+
+          if (response.status === 401) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'loginpage.html';
+            return;
+          }
+
+          const user = await response.json();
+          document.getElementById('username').value = user.name || '';
+          document.getElementById('email').value = user.email || '';
+          document.getElementById('phone').value = user.phone || '';
+          document.getElementById('dob').value = user.dob || '';
+          document.getElementById('address').value = user.address || '';
+          document.getElementById('bio').value = user.bio || '';
+        } catch (err) {
+          showStatus('Could not load profile. Is the backend running?', false);
+        }
+      }
+
+      // Save profile on form submit
+      document.getElementById('profileForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const updates = {
+          name: document.getElementById('username').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          dob: document.getElementById('dob').value,
+          address: document.getElementById('address').value.trim(),
+          bio: document.getElementById('bio').value.trim()
+        };
+
+        try {
+          const response = await fetch(API_BASE + '/user/profile', {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + token
+            },
+            body: JSON.stringify(updates)
+          });
+          const data = await response.json();
+
+          if (response.ok) {
+            localStorage.setItem('loggedInUser', JSON.stringify({ name: data.user.name, email: data.user.email }));
+            showStatus('Profile saved successfully!', true);
+          } else {
+            showStatus(data.message || 'Failed to save profile.', false);
+          }
+        } catch (err) {
+          showStatus('Could not connect to server.', false);
+        }
+      });
+
+      // Logout
+      document.getElementById('logoutBtn').addEventListener('click', function () {
+        const confirmed = confirm('Are you sure you want to log out?');
+        if (confirmed) {
+          localStorage.removeItem('token');
+          localStorage.removeItem('loggedInUser');
+          window.location.href = 'loginpage.html';
+        }
+      });
+
+      loadProfile();
+    </script>
+</body>
+</html>

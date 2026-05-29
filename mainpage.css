@@ -1,0 +1,722 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    height: 100vh;
+}
+
+/* Styling the container */
+.container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 200px;
+    background: linear-gradient(135deg, #1b0e0c, #454043);
+    padding: 10px;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  /* Logo Styling */
+  .logo h1 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  /* Menu List Styling */
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  /* Menu Items Styling */
+  .menu ul li {
+    width: 95%;
+  }
+  
+  /* Links styling with animations and transitions */
+  .menu ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Icon Spacing */
+  .menu ul li a i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover effects for links */
+  .menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(10px);
+  }
+  
+  /* Icon hover animation */
+  .menu ul li a:hover i {
+    transform: scale(1.2);
+    color: #ff0000;
+  }
+  
+  /* Customize individual icon colors */
+  .menu ul li:nth-child(1) i { color: #b42020; }
+  .menu ul li:nth-child(2) i { color: #b42020; }
+  .menu ul li:nth-child(3) i { color: #b42020; }
+  .menu ul li:nth-child(4) i { color:  #b42020; }
+  .menu ul li:nth-child(5) i { color:  #b42020; }
+  .menu ul li:nth-child(6) i { color:  #b42020; }
+  .menu ul li:nth-child(7) i { color: #b42020; }
+  .menu ul li:nth-child(8) i { color:  #b42020; }
+  
+  /* Animation for sidebar sliding */
+  .sidebar {
+    animation: slideIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-300px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+
+
+/* Main Content Styles */
+.main-content {
+    width: 70%;
+    padding: 10px;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+/* Logo Styling */
+.logo img {
+    width: 150px;
+}
+
+/* Navigation Menu Styling */
+.nav-menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #e82929;
+}
+
+/* Header Right Section */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Notifications Icon Styling */
+.notifications img {
+    width: 20px;
+    cursor: pointer;
+}
+
+/* User Profile Styling */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #00c853;
+}
+
+.user-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Filter Button */
+.filter-button {
+    background-color: #4543401b; /* Orange button for game filter */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+/* Logout Button */
+.logout-button {
+    background-color: #f44336; /* Red button for logout */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Search Bar (keeps the same styling as before) */
+.search-bar {
+    width: 50%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    background-color: #2a2a2a;
+    color: #f5f5f5;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+    color: #9e9e9e;
+    font-style: italic;
+}
+
+.search-bar:focus {
+    border-color: #00c853;
+    box-shadow: 0 6px 12px rgba(0, 200, 83, 0.2);
+}
+
+.search-bar:hover {
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+
+.search-bar {
+    width: 40%; /* Reduced width for a sleeker look */
+    padding: 12px 20px; /* Comfortable padding for a more premium feel */
+    border: 1px solid #555; /* Added subtle border */
+    border-radius: 30px; /* Rounder edges for a modern look */
+    font-size: 1rem;
+    background-color: #2a2a2a; /* Darker background for input field */
+    color: #f5f5f5; /* Light text color for readability */
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for input box */
+    transition: all 0.3s ease; /* Smooth transitions for hover/focus effects */
+}
+
+.search-bar::placeholder {
+    color: #9e9e9e; /* Softer placeholder text */
+    font-style: italic; /* Slightly stylized placeholder */
+}
+
+.search-bar:focus {
+    border-color: #00c853; /* Green border on focus for contrast */
+    box-shadow: 0 6px 12px rgba(0, 200, 83, 0.2); /* Highlighted shadow on focus */
+}
+
+.search-bar:hover {
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+}
+
+
+/* Featured Game Slider */
+.featured-game-slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Individual slides */
+.featured-game-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    animation: slideShow 15s infinite;
+}
+
+/* Featured game content */
+.featured-game-content {
+    color: white;
+    z-index: 2;
+}
+
+.featured-game-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.featured-game-content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Play Now Button */
+.play-now {
+    background-color: #ea212b; /* Default background color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 80px;
+    transition: background-color 0.9s ease, transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transitions */
+}
+
+/* Hover effect */
+.play-now:hover {
+    background-color: #e42635; /* Darker red */
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* Active click effect */
+.play-now:active {
+    transform: scale(0.95); /* Shrinks slightly on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}
+
+
+/* Background images for each slide */
+.featured-game-slide:nth-child(1) {
+    background-image: url('modernwarfare.jpg');
+}
+
+.featured-game-slide:nth-child(2) {
+    background-image: url('wukongLandscape.jpg');
+}
+
+.featured-game-slide:nth-child(3) {
+    background-image: url('witcher\ landscape.jpg');
+}
+
+/* Dark overlay */
+.featured-game-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.528); /* Dark overlay */
+    z-index: 1;
+    border-radius: 10px;
+}
+
+/* Keyframes for the sliding animation */
+@keyframes slideShow {
+    0% { opacity: 1; }
+    20% { opacity: 1; }
+    33.33% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Additional keyframes to loop through the slides */
+
+.featured-game-slide:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.featured-game-slide:nth-child(3) {
+    animation-delay: 10s;
+}
+
+/* Game Thumbnails Section */
+.game-thumbnails {
+    margin-top: 50px;
+}
+
+.game-thumbnails h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted for smaller cards */
+    gap: 15px; /* Adjusted gap */
+}
+
+.game-card {
+    background-color: #141313;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 400px; /* Adjusted height */
+    margin-bottom: 15px;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+.game-card img {
+    width: 100%;
+    height: 300px; /* Fixed height for images */
+    object-fit: cover;
+}
+
+.game-info {
+    padding: 5px;
+    text-align: center;
+    background-color: #222;
+    font-size: 0.8rem; /* Adjusted font size */
+}
+
+.game-title {
+    font-size: 1rem; /* Adjusted font size */
+    font-weight: bold;
+    margin: 5px 0px;
+}
+
+.game-rating {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.game-price, .game-mode {
+    font-size: 0.8rem; /* Smaller font size */
+    margin-top: 5px;
+}
+
+.rating-stars {
+    display: inline-block;
+    color: gold;
+}
+
+.filled-star::before {
+    content: '★';
+}
+
+.empty-star::before {
+    content: '☆';
+}
+
+/* Friends List - Minimalist Design */
+.friends-list {
+    width: 100%;
+    max-width: 200px;
+    background-color: #1e1e1e; /* Dark but soft background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+
+    /* Positioning to move it to the right */
+    position: fixed; /* Fixes the element in place */
+    right: 0; /* Aligns to the right edge of the page */
+    top: 0; /* Starts from the top of the page */
+    height: 100vh; /* Full height of the viewport */
+    overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+.friends-list h3 {
+    font-size: 1.0rem;
+    margin-bottom: 15px;
+    font-weight: normal;
+    color: #9e9e9e; /* Soft gray for headings */
+    border-bottom: 1px solid #444;
+    padding-bottom: 0px;
+}
+
+.friends {
+    list-style-type: none;
+    padding: 0;
+}
+
+.friends li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Subtle animations */
+    border-radius: 8px;
+}
+
+.friends li:hover {
+    background-color: #3a3a3a; /* Slight background highlight on hover */
+}
+
+.friends img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid #555; /* Clean border around avatars */
+}
+
+.friends span {
+    font-size: 0.8rem; /* Same as original */
+    color: #e0e0e0; /* Light gray for text */
+    margin-right: 10px;
+}
+
+/* Status Dot */
+.status-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    margin-left: auto;
+}
+
+/* Online and Offline Dot Colors */
+.status-dot.online {
+    background-color: #00c853; /* Green dot for online friends */
+}
+
+.status-dot.offline {
+    background-color: #ff5252; /* Red dot for offline friends */
+}
+.status-dot.offline {
+    background-color: #ff5252; /* Red dot for offline friends */
+}
+.status-dot.offline {
+    background-color: #ff5252; /* Red dot for offline friends */
+}
+.status-dot.offline {
+    background-color: #ff5252; /* Red dot for offline friends */
+}
+
+/* Minimal hover effect */
+.friends-list li:hover {
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05); /* Soft hover shadow */
+}
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+/* Footer section styling */
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ff4500;
+}
+
+.footer-section p {
+    font-size: 16px;
+    color: #cccccc;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ff4500;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: #cccccc;
+}
+
+main {
+    flex: 1; /* This allows the main content to grow, pushing the footer to the bottom */
+}
+/* Sticky Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position:relative;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px; /* Ensures that the footer remains at the bottom */
+}
+
+.footer-bottom {
+    border-top: 1px solid #55555580;
+    padding-top: 10px;
+    color: #aaaaaa8f;
+    margin-top: 10px;
+}
+
+
+/* Tournament Advertisement Styling */
+/* Tournament Advertisement Styling */
+.tournament-ad {
+    background: linear-gradient(to right, #0b0b0b, #1f3a5c);
+    color: #fff;
+    padding: 40px 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.ad-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.tournament-slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spread content horizontally */
+    flex-shrink: 0;
+    width: 100%;
+    padding: 20px;
+    opacity: 0; /* Start all slides hidden */
+    transform: translateX(100%); /* Start off-screen to the right */
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Smooth transitions */
+}
+
+.tournament-slide.active {
+    opacity: 1; /* Show active slide */
+    transform: translateX(0); /* Move to the center */
+}
+
+.tournament-details {
+    flex: 1;
+    padding: 20px;
+    text-align: center; /* Center text */
+}
+
+.tournament-image {
+    flex: 1; /* Allow image to take equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tournament-image img {
+    max-width: 80%; /* Adjust width */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tournament-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tournament-ad {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .ad-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tournament-slide {
+        flex-direction: column; /* Stack on smaller screens */
+    }
+
+    .tournament-image img {
+        max-width: 90%;
+        margin-top: 20px;
+    }
+}

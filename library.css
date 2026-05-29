@@ -1,0 +1,280 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0d1117; /* Dark blue background */
+    color: #f0f6fc; /* Light cyan for text */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #161b22; /* Darker tone for navbar */
+    padding: 15px;
+    border-bottom: 3px solid #e63946; /* Vibrant red border */
+}
+
+
+.logo h2 {
+    color: #ffffff; /* Red color for the logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #f0f6fc;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #e63946; /* Red hover effect */
+}
+
+/* Dropdown Account Button */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropbtn:hover .dropdown-content {
+    display: block;
+}
+
+/* Search bar styling */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#search-input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #e63946;
+    background-color: #161b22;
+    color: white;
+}
+
+#search-btn {
+    padding: 10px 20px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#search-btn:hover {
+    background-color: #d62839;
+}
+
+/* Library Section */
+.library-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e63946;
+}
+
+.category-section {
+    margin-bottom: 40px;
+}
+
+.category-section h2 {
+    margin-bottom: 10px;
+    color: #f7f5f5;
+}
+
+.section-heading {
+    text-wrap:pretty;
+    text-align: center;      
+    font-size: 28px;          
+    font-weight: bold;        
+    color: #ffffff;           
+    letter-spacing: 1.5px;   
+    margin-top: 40px;
+    margin-bottom: 40px;
+   
+}
+
+/* Game Grid Styling */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.game-card {
+    background-color: #354253;
+    border-radius: 10px;
+    overflow:hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 90%;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.game-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-bottom: 3px solid #e63946;
+}
+
+.game-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.game-info h3 {
+    color: #e63946;
+    margin-bottom: 5px;
+}
+
+.game-info p {
+    margin: 5px 0;
+}
+
+.rating {
+    margin-top: 10px;
+}
+
+.rating span {
+    color: #ffd700; /* Gold color for stars */
+    font-size: 18px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #d0303e;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 90px;
+    height: 40px;
+}
+
+button:hover {
+    background-color: #d62839;
+}
+
+/* Footer */
+/* Footer Styling */
+.footer {
+    background-color: #111; /* Dark background */
+    color: #fff; /* White text */
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #e63946; /* Red theme color */
+    font-weight: bold;
+}
+
+.footer-column p, .footer-column ul {
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #e63946; /* Red on hover */
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+

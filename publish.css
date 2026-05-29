@@ -1,0 +1,236 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling with Gradient Background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #000000, #fc1919); /* Gradient from black to red */
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Styling with Blur */
+header {
+    background-color: rgba(68, 68, 68, 0.075); /* Semi-transparent background for header */
+    color: #ff000077;
+    padding: 15px 0;
+    box-shadow: 0 0px 1px rgb(255, 255, 255);
+    backdrop-filter: blur(10px); /* Apply blur to background */
+}
+
+header .logo {
+    display: inline-block;
+    padding-left: 20px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #cfb700b6;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+header nav ul li a:hover {
+    background-color: #ff4500; /* Bright hover effect */
+    color: white;
+    animation: 1s forwards;
+    animation: 1s backwards;
+}
+
+/* Container Styling with Blur */
+.container {
+    width: 80%;
+    margin: 40px auto;
+    background-color: rgba(45, 45, 45, 0.5); /* Semi-transparent container background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgb(255, 255, 255); /* Softer shadow */
+    backdrop-filter: blur(15px); /* Apply blur to container background */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ff4500; /* Vivid heading color */
+}
+
+h3 {
+    margin-bottom: 15px;
+    color: #f4f4f4;
+}
+
+/* Form Styling */
+form {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #ed602d9b; /* Label color matching the theme */
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #444; /* Dark background for form inputs */
+    border: 1px solid #555;
+    color: #fff;
+    border-radius: 8px;
+    transition: border 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="file"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #ff4500; /* Focus border color */
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.form-group button {
+    background-color: #ff4500; /* Bright button */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #37de74; /* Darker hover color */
+}
+
+/* Footer Styling */
+/* Footer Styling */
+.footer {
+    background-color: #12121235;
+    color: #ffffff;
+    padding: 40px 0;
+    font-size: 16px;
+    
+}
+
+.footer .container1 {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-top: 100px;
+
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ff4500;
+}
+
+.footer-section p {
+    font-size: 16px;
+    color: #cccccc;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ff4500;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: #cccccc;
+}
+body::after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: 70%;
+    width: 99%;
+    height: 99%;
+    background-color: rgba(0, 0, 0, 0.181); /* Semi-transparent black background */
+    z-index: -1; /* Ensure it stays below the content but above the background */
+    transform: rotate(20deg); /* Rotate the box by 20 degrees */
+    transform-origin: top left; /* Set the origin for the rotation */
+}
+
+.absolute-image {
+    position: absolute;
+    top: -10px; /* Adjust based on where you want the image */
+    right: 59%; /* Adjust based on where you want the image */
+
+    width: 100px; /* Adjust size as necessary */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Ensure the image is on top */
+    transform: rotate(-20deg); /* Rotate the box by 20 degrees */
+    transform-origin: top left;
+}
+.absolute-image1 {
+    position: absolute;
+    top:-10px; /* Adjust based on where you want the image */
+    right: 35%; /* Adjust based on where you want the image */
+
+    width: 500px; /* Adjust size as necessary */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 2; /* Ensure the image is on top */
+    
+}

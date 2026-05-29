@@ -1,0 +1,241 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('gradbackgrnd.jpg'); /* Add your background image path here */
+    background-size: cover; /* Ensures the image covers the entire body */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #fff;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(28, 28, 28, 0.9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .logo h2 {
+    color: #ffffffde;
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff4c4c;
+}
+
+.logout-btn {
+    padding: 8px 15px;
+    background-color: #ff4c4c;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #e63939;
+}
+
+/* Account Header */
+.account-header {
+    text-align: center;
+    padding: 20px;
+    background:linear-gradient(rgb(233, 49, 49),rgb(0, 0, 0));
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.account-header h1 {
+    font-size: 36px;
+    color: #fff;
+    animation: fadeIn 1s ease;
+}
+
+/* Account Container */
+.account-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: slideIn 1s ease;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #f02e2e;
+    box-shadow: 0 0 10px rgba(255, 76, 76, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.upload-btn {
+    display: none;
+}
+
+.edit-btn {
+    display: inline-block;
+    background-color: #fa3434;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #f61c1c;
+}
+
+/* Account Info Form */
+.account-info {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #74747457;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #2c2c2c;
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff4c4c;
+}
+
+/* Save Button */
+.save-btn {
+    padding: 12px 20px;
+    background-color: #fb1b1b;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+    background-color: #e63939;
+}
+
+/* Other Login Options */
+.login-options {
+    margin-top: 30px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+.login-options h3 {
+    margin-bottom: 15px;
+}
+
+.social-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-logo img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1c1c1c;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

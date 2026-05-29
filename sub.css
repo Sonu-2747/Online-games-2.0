@@ -1,0 +1,300 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling with Red and Black Gradient Background */
+body {
+    font-family: Arial, sans-serif;
+    color: #000000;
+    line-height: 1.6;
+    position: relative;
+    
+    height: 100vh;
+}
+
+/* Blurred Background Gradient */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, black,red ); /* Red on the left, black on the right */
+    filter: blur(1px);  /* Apply blur to the gradient */
+    z-index: -1;  /* Keep the gradient behind the content */
+    opacity: 0.9; /* Optional: Adjust opacity to soften the gradient */
+}
+
+/* Container to hold all visible content */
+.container {
+    position: relative;
+    z-index: 1; /* Ensure the content stays above the background */
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: Semi-transparent background */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(244, 244, 244, 0); /* Semi-transparent header to blend with the background */
+    color: rgba(255, 255, 255, 0.627);
+    padding: 10px 0;
+}
+
+header .logo {
+    display: inline-block;
+    padding-left: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Subscription Cards Container */
+.subscription-container {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.subscription-container h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* Cards Container */
+.cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Individual Card Styling */
+.card {
+    background-color: rgba(255, 255, 255, 0.703);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    margin: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card .price {
+    font-size: 1.7em;
+    margin-bottom: 20px;
+    color: #28a745;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.card ul li:last-child {
+    border-bottom: none;
+}
+
+.card button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.card button:hover {
+    background-color: #218838;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #12121235;
+    color: #ffffff;
+    padding: 40px 0;
+    font-size: 16px;
+    
+}
+
+.footer .container1 {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-top: 100px;
+
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ff4500;
+}
+
+.footer-section p {
+    font-size: 16px;
+    color: #cccccc;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ff4500;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: #cccccc;
+}
+
+/* Call-to-Action Box */
+.cta-box {
+    background-color: rgba(51, 51, 51, 0);
+    color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 40px auto;
+    text-align: center;
+    width: 80%;
+    box-shadow: 0 0 1px rgb(255, 255, 255);
+    position: relative; /* Important for the positioning of the image */
+}
+
+.cta-box h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.cta-box p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background-color: #50fc407a;
+    color: rgb(0, 0, 0);
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #218838;
+}
+
+/* CTA Image Styling */
+.cta-image {
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    right: 20px; /* Adjust the spacing from the right side */
+    transform: translateY(-50%); /* Vertically center the image */
+    width: 100px; /* Adjust the width of the image */
+    height: auto;
+    opacity: 0.9; /* Optional: Slight transparency */
+}
+
+/* Black box behind the page content */
+body::after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: 70%;
+    width: 99%;
+    height: 99%;
+    background-color: rgba(0, 0, 0, 0.181); /* Semi-transparent black background */
+    z-index: -1; /* Ensure it stays below the content but above the background */
+    transform: rotate(20deg); /* Rotate the box by 20 degrees */
+    transform-origin: top left; /* Set the origin for the rotation */
+}
+
+
+/* Navigation Styles */
+nav ul li a {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Add padding for better click area */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Ensure no underline on hover */
+nav ul li a:hover {
+    background-color: rgba(255, 69, 0, 0.8); /* Change background color on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    text-decoration: none; /* Explicitly ensure no underline on hover */
+}
